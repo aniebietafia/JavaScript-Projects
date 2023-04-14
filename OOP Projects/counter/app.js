@@ -8,9 +8,13 @@ function Counter(element, value) {
   this.valueDOM = element.querySelector(".value");
   this.valueDOM.textContent = this.value;
 
-  this.increaseBtn.addEventListener("click", this.increase.bind(this));
-  this.resetBtn.addEventListener("click", this.reset.bind(this));
-  this.decreaseBtn.addEventListener("click", this.decrease.bind(this));
+  this.increase = this.increase.bind(this);
+  this.decrease = this.decrease.bind(this);
+  this.reset = this.reset.bind(this);
+
+  this.increaseBtn.addEventListener("click", this.increase);
+  this.resetBtn.addEventListener("click", this.reset);
+  this.decreaseBtn.addEventListener("click", this.decrease);
 }
 
 Counter.prototype.increase = function () {
