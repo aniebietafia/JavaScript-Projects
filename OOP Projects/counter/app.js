@@ -1,6 +1,6 @@
 // Function constructor
 function Counter(element, value) {
-  this.counter = element;
+  this.element = element;
   this.value = value;
   this.resetBtn = element.querySelector(".reset");
   this.increaseBtn = element.querySelector(".increase");
