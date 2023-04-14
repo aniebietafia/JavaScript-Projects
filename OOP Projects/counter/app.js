@@ -14,11 +14,11 @@ Counter.prototype.increase = function () {
   this.valueDOM.textContent = this.value;
 };
 Counter.prototype.decrease = function () {
-  this.value++;
+  this.value--;
   this.valueDOM.textContent = this.value;
 };
 Counter.prototype.reset = function () {
-  this.value++;
+  this.value = 0;
   this.valueDOM.textContent = this.value;
 };
 
@@ -32,5 +32,3 @@ function getElement(selection) {
   }
   throw new Error(`Please check ${selection} selector, no such element exists.`);
 }
-
-firstCounter.increaseBtn.addEventListener("click", this.increase);
