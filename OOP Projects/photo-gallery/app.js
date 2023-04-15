@@ -60,7 +60,11 @@ Gallery.prototype.closeModal = function () {
   this.prevBtn.removeEventListener("click", this.prevImage);
 };
 Gallery.prototype.nextImage = function () {
-  // code here
+  const selected = this.modalImages.querySelector(".selected");
+  const next = selected.nextElementSibling || this.modalImages.firstElementChild;
+  selected.classList.remove("selected");
+  next.classList.add("selected");
+  this.setMainImage(next);
 };
 Gallery.prototype.prevImage = function () {
   // code here
