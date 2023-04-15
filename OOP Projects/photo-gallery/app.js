@@ -67,7 +67,11 @@ Gallery.prototype.nextImage = function () {
   this.setMainImage(next);
 };
 Gallery.prototype.prevImage = function () {
-  // code here
+  const selected = this.modalImages.querySelector(".selected");
+  const prev = selected.previousElementSibling || this.modalImages.lastElementChild;
+  selected.classList.remove("selected");
+  prev.classList.add("selected");
+  this.setMainImage(prev);
 };
 
 const nature = new Gallery(getElement(".nature"));
