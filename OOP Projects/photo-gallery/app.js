@@ -21,6 +21,7 @@ function Gallery(element) {
   this.closeModal = this.closeModal.bind(this);
   this.nextImage = this.nextImage.bind(this);
   this.prevImage = this.prevImage.bind(this);
+  this.chooseImage = this.prevImage.bind(this);
 
   //   this.openModal = this.openModal.bind(this);
   this.container.addEventListener(
@@ -46,6 +47,7 @@ Gallery.prototype.openModal = function (selectedImage, list) {
   this.closeBtn.addEventListener("click", this.closeModal);
   this.nextBtn.addEventListener("click", this.nextImage);
   this.prevBtn.addEventListener("click", this.prevImage);
+  this.modalImages.addEventListener("click", this.chooseImage);
 };
 
 Gallery.prototype.setMainImage = function (selectedImage) {
@@ -58,6 +60,7 @@ Gallery.prototype.closeModal = function () {
   this.closeBtn.removeEventListener("click", this.closeModal);
   this.nextBtn.removeEventListener("click", this.nextImage);
   this.prevBtn.removeEventListener("click", this.prevImage);
+  this.modalImages.removeEventListener("click", this.chooseImage);
 };
 Gallery.prototype.nextImage = function () {
   const selected = this.modalImages.querySelector(".selected");
@@ -73,6 +76,7 @@ Gallery.prototype.prevImage = function () {
   prev.classList.add("selected");
   this.setMainImage(prev);
 };
+Gallery.prototype.chooseImage = function (e) {};
 
 const nature = new Gallery(getElement(".nature"));
 const city = new Gallery(getElement(".city"));
