@@ -17,11 +17,19 @@ function Gallery(element) {
   this.nextBtn = getElement(".next-btn");
   this.prevBtn = getElement(".prev-btn");
 
-  this.openModal = this.openModal.bind(this);
-  this.container.addEventListener("click", this.openModal);
+  //   this.openModal = this.openModal.bind(this);
+  this.container.addEventListener(
+    "click",
+    function (e) {
+      if (e.target.classList.contains("img")) {
+        this.openModal(e.target, this.list);
+      }
+      this.openModal();
+    }.bind(this)
+  );
 }
 
-Gallery.prototype.openModal = function () {
+Gallery.prototype.openModal = function (selectedImage, list) {
   console.log("open modal");
   this.modal.classList.add("open");
 };
