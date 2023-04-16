@@ -31,4 +31,16 @@ const printSiblings = () => {
 
 const greetUser = ({ firstName, lastName }) => `Welcome back! ${firstName} ${lastName}`;
 
-console.log(greetUser(person));
+// console.log(greetUser(person));
+
+// New String methods
+const fullName = "Aniebiet Afia";
+
+const printFullName = () => {
+  if (fullName.includes("ebi")) {
+    return fullName;
+  } else {
+    return null;
+  }
+};
+console.log(printFullName());
