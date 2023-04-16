@@ -7,6 +7,6 @@ let second = "Susan";
 // first = second;
 // second = temp;
 
+// Method 2
 [first, second] = [second, first];
-
 console.log(first, second);
