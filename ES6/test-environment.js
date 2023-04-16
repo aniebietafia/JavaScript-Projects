@@ -19,12 +19,18 @@ const person = {
   role: "Data Analyst",
 };
 
-const { siblings } = person;
 const printSiblings = () => {
+  const { siblings } = person;
   return siblings
     .map((sibling) => {
       return sibling;
     })
     .join(" ");
 };
-console.log(printSiblings());
+// console.log(printSiblings());
+
+const greetUser = () => {
+  const { firstName, lastName } = person;
+  return `Welcome back! ${firstName} ${lastName}`;
+};
+console.log(greetUser());
