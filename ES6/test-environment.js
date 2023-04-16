@@ -29,8 +29,6 @@ const printSiblings = () => {
 };
 // console.log(printSiblings());
 
-const greetUser = () => {
-  const { firstName, lastName } = person;
-  return `Welcome back! ${firstName} ${lastName}`;
-};
-console.log(greetUser());
+const greetUser = ({ firstName, lastName }) => `Welcome back! ${firstName} ${lastName}`;
+
+console.log(greetUser(person));
