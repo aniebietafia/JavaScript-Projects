@@ -20,4 +20,11 @@ const person = {
 };
 
 const { siblings } = person;
-console.log(siblings);
+const printSiblings = () => {
+  return siblings
+    .map((sibling) => {
+      return sibling;
+    })
+    .join(" ");
+};
+console.log(printSiblings());
