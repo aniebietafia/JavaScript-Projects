@@ -43,4 +43,8 @@ const printFullName = () => {
     return null;
   }
 };
-console.log(printFullName());
+// console.log(printFullName());
+
+for (const keys in person) {
+  console.log([keys]);
+}
